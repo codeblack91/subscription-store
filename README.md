@@ -1,4 +1,5 @@
 # subscription_shop
 Some subscription store
 
-![Приложение подписок](https://github.com/user-attachments/assets/a40ec468-54d0-472d-9b99-c60baccad04b)
+![Приложение подписок drawio](https://github.com/user-attachments/assets/ae3a7e2b-1a76-4ee7-b41f-c2b20fcfb108)
+
