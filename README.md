@@ -8,6 +8,7 @@
 - logrus для логов
 - Swaggo для swagger
 - Запуск в docker-compose
+- Шаблон проекта согласно принципов чистой архитектуры
 
 Схема вызовов сервисов:
 - Вызов каталога: SubscriptionShopBackend GET api/v1/catalog -> CatalogApi GET api/v1/catalog
