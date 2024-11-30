@@ -1,24 +1,29 @@
 # subscription_shop
-[Компоненты приложения](#Компоненты приложения)
 
-#Компоненты приложения:
+
+# Компоненты приложения:
 - gorilla/mux
 - postgreSql (toDo)
 - для конфигов (toDo)
 - стандартный логер
-- Swaggo для swagger (toDo) openApi, uapicodegen
+- Swaggo для swagger (toDo) openApi, oapi-codegen
 - Запуск в docker-compose (toDo)
 - Шаблон проекта согласно принципов чистой архитектуры
 
-#Схема вызовов сервисов:
-- Вызов каталога: SubscriptionShopBackend GET api/v1/catalog -> CatalogApi GET api/v1/catalog
-- Вызов карточки подписки: SubscriptionShopBackend GET api/v1/catalog/subscription/{id} -> CatalogApi GET api/v1/catalog/subscription/{id}
+# Доступные api-методы:
+- POST api/v1/subscriptions - создает подписку
+- GET api/v1/subscriptions - возвращает доступные подписки
+- GET api/v1/subscriptions/{subscriptionid} - возвращает доступную подписку
+- PUT api/v1/subscriptions/{subscriptionid} - изменяет подписку
+- DELETE api/v1/subscriptions/{subscriptionid} - удаляет подписку
 
-- Создание подписки: SubscriptionShopBackend api/v1/subscriptions -> SubscriptionApi POST api/v1/subscriptions -> NotificationApi POST api/v1/email -> POST api/v1/customer
-- Получение подписок подписчика: SubscriptionShopBackend api/v1/subscriptions/{customerid} -> SubscriptionApi POST api/v1/subscriptions/{customerid} -> CusctomerApi GET api/v1/catalog/subscription
-- Получение конкретной подписки подписчика: SubscriptionShopBackend api/v1/subscriptions/{customerid}/{subscriptionid} -> SubscriptionApi POST api/v1/subscriptions/{customerid}/{subscriptionid} -> CusctomerApi GET api/v1/catalog/subscription
 
-  ![Приложение подписок](https://github.com/user-attachments/assets/ca18379f-8dec-45ba-aebd-1988f75e7f45)
+- POST api/v1/subscriptions/{subscriberid} - создает подписку пользователю
+- GET api/v1/subscriptions/{subscriberid} - возвращает принадлежащие пользователю подписки
+- GET api/v1/subscriptions/{subscriberid}/{subscriptionid} - возвращает конкретную подписку пользователя
+- PUT api/v1/subscriptions/{subscriberid}/{subscriptionid} - изменяет принадлежащую пользователю подписку
+- DELETE api/v1/subscriptions/{subscriberid}/{subscriptionid} - удаляет принадлежащую пользователю подписку
+
 
 
 
