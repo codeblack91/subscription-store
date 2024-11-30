@@ -1,16 +1,16 @@
 # subscription_shop
+[Компоненты приложения](#Компоненты приложения)
 
-
-Компоненты приложения:
+#Компоненты приложения:
 - gorilla/mux
-- sqlite (файл базы будет в проекте)
-- viper для конфигов
-- logrus для логов
-- Swaggo для swagger
-- Запуск в docker-compose
+- postgreSql (toDo)
+- для конфигов (toDo)
+- стандартный логер
+- Swaggo для swagger (toDo) openApi, uapicodegen
+- Запуск в docker-compose (toDo)
 - Шаблон проекта согласно принципов чистой архитектуры
 
-Схема вызовов сервисов:
+#Схема вызовов сервисов:
 - Вызов каталога: SubscriptionShopBackend GET api/v1/catalog -> CatalogApi GET api/v1/catalog
 - Вызов карточки подписки: SubscriptionShopBackend GET api/v1/catalog/subscription/{id} -> CatalogApi GET api/v1/catalog/subscription/{id}
 
