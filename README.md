@@ -12,18 +12,6 @@
 
 ### Доступные api-методы:
 [Открыть в Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/codeblack91/subscription-store/main/SubscriptionStoreApi.yaml)
-- POST api/v1/subscriptions - создает подписку
-- GET api/v1/subscriptions - возвращает доступные подписки
-- GET api/v1/subscriptions/{subscriptionid} - возвращает доступную подписку
-- PUT api/v1/subscriptions/{subscriptionid} - изменяет подписку
-- DELETE api/v1/subscriptions/{subscriptionid} - удаляет подписку
-
-
-- POST api/v1/subscriptions/{subscriberid} - создает подписку пользователю
-- GET api/v1/subscriptions/{subscriberid} - возвращает принадлежащие пользователю подписки
-- GET api/v1/subscriptions/{subscriberid}/{subscriptionid} - возвращает конкретную подписку пользователя
-- PUT api/v1/subscriptions/{subscriberid}/{subscriptionid} - изменяет принадлежащую пользователю подписку
-- DELETE api/v1/subscriptions/{subscriberid}/{subscriptionid} - удаляет принадлежащую пользователю подписку
 
 
 
