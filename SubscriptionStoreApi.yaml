@@ -2,11 +2,61 @@ openapi: 3.0.0
 info:
   title: SubscriptionStoreApi
   version: 1.0.0
+  description: API для управления подписками и пользователями
 tags:
   - name: Subscriptions
     description: Подписки
   - name: Subscribers
-    description: Подписки
+    description: Подписки пользователей
+
+components:
+  schemas:
+    Subscription:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор подписки
+        name:
+          type: string
+          description: Название подписки
+        price:
+          type: number
+          format: float
+          description: Цена подписки
+        paymentsCount:
+          type: string
+          description: Длительность подписки (например, "1 месяц", "3 месяца")
+        isActive:
+          type: boolean
+          description: Статус подписки (активна/неактивна)
+      required:
+        - id
+        - name
+        - price
+        - paymentsCount
+
+    Subscriber:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор пользователя
+        email:
+          type: string
+          format: email
+          description: Электронная почта пользователя
+        name:
+          type: string
+          description: Имя пользователя
+        subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subscription'
+          description: Список подписок пользователя
+      required:
+        - id
+        - email
 
 paths:
   /api/v1/subscriptions:
@@ -15,6 +65,11 @@ paths:
         - Subscriptions
       summary: Создает подписку
       operationId: createSubscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
       responses:
         '201':
           description: Subscription created
@@ -26,6 +81,13 @@ paths:
       responses:
         '200':
           description: A list of subscriptions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subscription'
+
   /api/v1/subscriptions/{subscriptionid}:
     get:
       tags:
@@ -42,6 +104,10 @@ paths:
       responses:
         '200':
           description: Subscription details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
     put:
       tags:
         - Subscriptions
@@ -54,6 +120,11 @@ paths:
           description: Уникальный идентификатор подписки
           schema:
             type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
       responses:
         '200':
           description: Subscription updated
@@ -72,6 +143,7 @@ paths:
       responses:
         '204':
           description: Subscription deleted
+
   /api/v1/subscribers/{subscriberid}/{subscriptionid}:
     post:
       tags:
@@ -115,6 +187,14 @@ paths:
       responses:
         '200':
           description: List of user subscriptions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  subscriber:
+                    $ref: '#/components/schemas/Subscriber'
+
   /api/v1/subscribers/{subscriptionid}/{subscriberid}:
     get:
       tags:
@@ -137,6 +217,10 @@ paths:
       responses:
         '200':
           description: User subscription details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscriber'
     put:
       tags:
         - Subscribers
