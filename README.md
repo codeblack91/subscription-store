@@ -29,7 +29,7 @@
 
 Для просмотра спецификации воспользуйтесь Swagger UI:
 
-<iframe src="https://petstore.swagger.io/?url=[https://example.com/openapi.yaml](https://github.com/codeblack91/subscription-store/blob/main/SubscriptionStoreApi.yaml)" width="100%" height="500px"></iframe>
+[Открыть в Swagger UI](https://petstore.swagger.io/?url=https://example.com/openapi.yaml](https://github.com/codeblack91/subscription-store/blob/main/SubscriptionStoreApi.yaml)
 
 
 
