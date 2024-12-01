@@ -5,6 +5,8 @@ info:
 tags:
   - name: Subscriptions
     description: Подписки
+  - name: Subscriber
+    description: Подписки
 
 paths:
   /api/v1/subscriptions:
@@ -67,7 +69,7 @@ paths:
       responses:
         '204':
           description: Subscription deleted
-  /api/v1/subscriber/{subscriberid}/{subscriptionid}/:
+  /api/v1/subscribers/{subscriberid}/{subscriptionid}/:
     post:
       tags:
         - Subscriptions
@@ -96,7 +98,7 @@ paths:
       responses:
         '200':
           description: List of user subscriptions
-  /api/v1/subscriber/{subscriptionid}/{subscriberid}:
+  /api/v1/subscribers/{subscriptionid}/{subscriberid}:
     get:
       tags:
         - Subscriptions
