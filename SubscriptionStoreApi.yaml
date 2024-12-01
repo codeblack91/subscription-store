@@ -5,7 +5,7 @@ info:
 tags:
   - name: Subscriptions
     description: Подписки
-  - name: Subscriber
+  - name: Subscribers
     description: Подписки
 
 paths:
