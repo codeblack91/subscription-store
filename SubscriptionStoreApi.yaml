@@ -72,7 +72,7 @@ paths:
   /api/v1/subscribers/{subscriberid}/{subscriptionid}/:
     post:
       tags:
-        - Subscriptions
+        - Subscribers
       summary: Создает подписку пользователю
       operationId: createUserSubscription
       parameters:
@@ -86,7 +86,7 @@ paths:
           description: User subscription created
     get:
       tags:
-        - Subscriptions
+        - Subscribers
       summary: Возвращает принадлежащие пользователю подписки
       operationId: getUserSubscriptions
       parameters:
@@ -101,7 +101,7 @@ paths:
   /api/v1/subscribers/{subscriptionid}/{subscriberid}:
     get:
       tags:
-        - Subscriptions
+        - Subscribers
       summary: Возвращает конкретную подписку пользователя
       operationId: getUserSubscription
       parameters:
@@ -120,7 +120,7 @@ paths:
           description: User subscription details
     put:
       tags:
-        - Subscriptions
+        - Subscribers
       summary: Изменяет принадлежащую пользователю подписку
       operationId: updateUserSubscription
       parameters:
@@ -139,7 +139,7 @@ paths:
           description: User subscription updated
     delete:
       tags:
-        - Subscriptions
+        - Subscribers
       summary: Удаляет принадлежащую пользователю подписку
       operationId: deleteUserSubscription
       parameters:
