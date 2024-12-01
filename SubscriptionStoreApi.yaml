@@ -166,6 +166,7 @@ paths:
       responses:
         '201':
           description: User subscription created
+  /api/v1/subscribers/{subscriberid}:    
     get:
       tags:
         - Subscribers
@@ -178,22 +179,6 @@ paths:
           description: Уникальный идентификатор пользователя
           schema:
             type: string
-        - name: subscriptionid
-          in: path
-          required: true
-          description: Уникальный идентификатор подписки
-          schema:
-            type: string
-      responses:
-        '200':
-          description: List of user subscriptions
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  subscriber:
-                    $ref: '#/components/schemas/Subscriber'
 
   /api/v1/subscribers/{subscriptionid}/{subscriberid}:
     get:
