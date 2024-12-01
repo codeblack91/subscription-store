@@ -10,7 +10,7 @@
 - Запуск в docker-compose (toDo)
 - Шаблон проекта согласно принципов чистой архитектуры
 
-# Доступные api-методы:
+# Доступные api-методы: [Открыть в Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/codeblack91/subscription-store/main/SubscriptionStoreApi.yaml)
 - POST api/v1/subscriptions - создает подписку
 - GET api/v1/subscriptions - возвращает доступные подписки
 - GET api/v1/subscriptions/{subscriptionid} - возвращает доступную подписку
@@ -24,12 +24,6 @@
 - PUT api/v1/subscriptions/{subscriberid}/{subscriptionid} - изменяет принадлежащую пользователю подписку
 - DELETE api/v1/subscriptions/{subscriberid}/{subscriptionid} - удаляет принадлежащую пользователю подписку
 
-
-# API Documentation
-
-Для просмотра спецификации воспользуйтесь Swagger UI:
-
-[Открыть в Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/codeblack91/subscription-store/main/SubscriptionStoreApi.yaml)
 
 
 
