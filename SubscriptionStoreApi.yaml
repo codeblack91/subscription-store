@@ -1,0 +1,156 @@
+openapi: 3.0.0
+info:
+  title: SubscriptionStoreApi
+  version: 1.0.0
+tags:
+  - name: Subscriptions
+    description: Подписки
+
+paths:
+  /api/v1/subscriptions:
+    post:
+      tags:
+        - Subscriptions
+      summary: Создает подписку
+      operationId: createSubscription
+      responses:
+        '201':
+          description: Subscription created
+    get:
+      tags:
+        - Subscriptions
+      summary: Возвращает доступные подписки
+      operationId: getSubscriptions
+      responses:
+        '200':
+          description: A list of subscriptions
+  /api/v1/subscriptions/{subscriptionid}:
+    get:
+      tags:
+        - Subscriptions
+      summary: Возвращает доступную подписку
+      operationId: getSubscription
+      parameters:
+        - name: subscriptionid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Subscription details
+    put:
+      tags:
+        - Subscriptions
+      summary: Изменяет подписку
+      operationId: updateSubscription
+      parameters:
+        - name: subscriptionid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Subscription updated
+    delete:
+      tags:
+        - Subscriptions
+      summary: Удаляет подписку
+      operationId: deleteSubscription
+      parameters:
+        - name: subscriptionid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Subscription deleted
+  /api/v1/subscriptions/{subscriberid}:
+    post:
+      tags:
+        - Subscriptions
+      summary: Создает подписку пользователю
+      operationId: createUserSubscription
+      parameters:
+        - name: subscriberid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: User subscription created
+    get:
+      tags:
+        - Subscriptions
+      summary: Возвращает принадлежащие пользователю подписки
+      operationId: getUserSubscriptions
+      parameters:
+        - name: subscriberid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of user subscriptions
+  /api/v1/subscriptions/{subscriberid}/{subscriptionid}:
+    get:
+      tags:
+        - Subscriptions
+      summary: Возвращает конкретную подписку пользователя
+      operationId: getUserSubscription
+      parameters:
+        - name: subscriberid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: subscriptionid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User subscription details
+    put:
+      tags:
+        - Subscriptions
+      summary: Изменяет принадлежащую пользователю подписку
+      operationId: updateUserSubscription
+      parameters:
+        - name: subscriberid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: subscriptionid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User subscription updated
+    delete:
+      tags:
+        - Subscriptions
+      summary: Удаляет принадлежащую пользователю подписку
+      operationId: deleteUserSubscription
+      parameters:
+        - name: subscriberid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: subscriptionid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User subscription deleted
