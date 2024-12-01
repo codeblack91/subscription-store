@@ -1,4 +1,4 @@
-# subscription_shop
+# subscription-store
 
 
 # Компоненты приложения:
