@@ -67,7 +67,7 @@ paths:
       responses:
         '204':
           description: Subscription deleted
-  /api/v1/subscriptions/{subscriberid}:
+  /api/v1/subscriber/{subscriberid}/{subscriptionid}/:
     post:
       tags:
         - Subscriptions
@@ -96,7 +96,7 @@ paths:
       responses:
         '200':
           description: List of user subscriptions
-  /api/v1/subscriptions/{subscriberid}/{subscriptionid}:
+  /api/v1/subscriber/{subscriptionid}/{subscriberid}:
     get:
       tags:
         - Subscriptions
