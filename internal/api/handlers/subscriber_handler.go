@@ -5,6 +5,8 @@ import (
 	"net/http"
 	entities "subscription-store/internal/entities"
 	usecases "subscription-store/internal/usecase"
+
+	"github.com/gorilla/mux"
 )
 
 type SubscriberHandler struct {
@@ -12,8 +14,8 @@ type SubscriberHandler struct {
 }
 
 func (h *SubscriberHandler) CreateUserSubscription(w http.ResponseWriter, r *http.Request) {
-	subscriberID := r.URL.Query().Get("subscriberid")
-	subscriptionID := r.URL.Query().Get("subscriptionid")
+	subscriberID := mux.Vars(r)["subscriberid"]
+	subscriptionID := mux.Vars(r)["subscriptionid"]
 	err := h.UseCase.CreateUserSubscription(subscriberID, subscriptionID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -23,7 +25,7 @@ func (h *SubscriberHandler) CreateUserSubscription(w http.ResponseWriter, r *htt
 }
 
 func (h *SubscriberHandler) GetUserSubscriptions(w http.ResponseWriter, r *http.Request) {
-	subscriberID := r.URL.Query().Get("subscriberid")
+	subscriberID := mux.Vars(r)["subscriberid"]
 	subscriptions, err := h.UseCase.GetUserSubscriptions(subscriberID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusNotFound)
@@ -34,8 +36,8 @@ func (h *SubscriberHandler) GetUserSubscriptions(w http.ResponseWriter, r *http.
 }
 
 func (h *SubscriberHandler) GetUserSubscription(w http.ResponseWriter, r *http.Request) {
-	subscriberID := r.URL.Query().Get("subscriberid")
-	subscriptionID := r.URL.Query().Get("subscriptionid")
+	subscriberID := mux.Vars(r)["subscriberid"]
+	subscriptionID := mux.Vars(r)["subscriptionid"]
 	subscription, err := h.UseCase.GetUserSubscription(subscriberID, subscriptionID)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusNotFound)
@@ -46,8 +48,8 @@ func (h *SubscriberHandler) GetUserSubscription(w http.ResponseWriter, r *http.R
 }
 
 func (h *SubscriberHandler) UpdateUserSubscription(w http.ResponseWriter, r *http.Request) {
-	subscriberID := r.URL.Query().Get("subscriberid")
-	subscriptionID := r.URL.Query().Get("subscriptionid")
+	subscriberID := mux.Vars(r)["subscriberid"]
+	subscriptionID := mux.Vars(r)["subscriptionid"]
 	var sub entities.Subscription
 	if err := json.NewDecoder(r.Body).Decode(&sub); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -63,8 +65,8 @@ func (h *SubscriberHandler) UpdateUserSubscription(w http.ResponseWriter, r *htt
 }
 
 func (h *SubscriberHandler) DeleteUserSubscription(w http.ResponseWriter, r *http.Request) {
-	subscriberID := r.URL.Query().Get("subscriberid")
-	subscriptionID := r.URL.Query().Get("subscriptionid")
+	subscriberID := mux.Vars(r)["subscriberid"]
+	subscriptionID := mux.Vars(r)["subscriptionid"]
 	if err := h.UseCase.DeleteUserSubscription(subscriberID, subscriptionID); err != nil {
 		http.Error(w, err.Error(), http.StatusNotFound)
 		return
