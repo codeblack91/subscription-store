@@ -1,5 +1,10 @@
 # SubscriptionStoreApi
-
+Функции сервиса:
+- Cоздание подписок; (done)
+- Подключение подписок пользователю (done)
+- Заполнение личных данных пользователя; (toDo)
+- Уведомления; (toDo)
+- Тарификация подписок; (toDo)
 
 ### Компоненты приложения:
 - gorilla/mux (done)
@@ -13,9 +18,12 @@
 ### Доступные api-методы:
 [Открыть в Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/codeblack91/subscription-store/main/SubscriptionStoreApi.yaml)
 
-
-Основные возможности:
-1. crud операции для создания подписок;
+## История изменений:
+upd: 01.12.2024 г.
+1. Создание проекта;
+2. Шаблон читой архитектуры;
+3. Хранение данных приложения в памяти;
+4. crud операции для создания подписок;
    - для инициализации подписки в памяти необходимо выполнить:
      curl -X POST http://localhost:8080/api/v1/subscriptions \
   -H "Content-Type: application/json" \
@@ -26,7 +34,7 @@
         "paymentsCount": "12",
         "isActive": true
       }'
-3. crud для добавления подписок пользователям.
+5. crud для добавления подписок пользователям;
 
 
 
