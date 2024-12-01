@@ -2,13 +2,13 @@
 
 
 ### Компоненты приложения:
-- gorilla/mux
+- gorilla/mux (done)
 - postgreSql (toDo)
 - для конфигов (toDo)
 - стандартный логер (toDo)
 - Swaggo для swagger (toDo)
 - Запуск в docker-compose (toDo)
-- Шаблон проекта согласно принципов чистой архитектуры
+- Шаблон проекта согласно принципов чистой архитектуры (done)
 
 ### Доступные api-методы:
 [Открыть в Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/codeblack91/subscription-store/main/SubscriptionStoreApi.yaml)
