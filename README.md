@@ -1,7 +1,7 @@
-# subscription-store
+# SubscriptionStoreApi
 
 
-## Компоненты приложения:
+### Компоненты приложения:
 - gorilla/mux
 - postgreSql (toDo)
 - для конфигов (toDo)
@@ -10,7 +10,7 @@
 - Запуск в docker-compose (toDo)
 - Шаблон проекта согласно принципов чистой архитектуры
 
-## Доступные api-методы:
+### Доступные api-методы:
 [Открыть в Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/codeblack91/subscription-store/main/SubscriptionStoreApi.yaml)
 - POST api/v1/subscriptions - создает подписку
 - GET api/v1/subscriptions - возвращает доступные подписки
