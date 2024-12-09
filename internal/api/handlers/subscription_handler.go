@@ -3,8 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	entities "subscription-store/internal/entities"
-	usecases "subscription-store/internal/usecase"
+	model "subscription-store/internal/dal/models"
+	usecases "subscription-store/internal/service"
 
 	"github.com/gorilla/mux"
 )
@@ -14,7 +14,7 @@ type SubscriptionHandler struct {
 }
 
 func (h *SubscriptionHandler) CreateSubscription(w http.ResponseWriter, r *http.Request) {
-	var sub entities.Subscription
+	var sub model.Subscription
 	if err := json.NewDecoder(r.Body).Decode(&sub); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
@@ -53,7 +53,7 @@ func (h *SubscriptionHandler) GetSubscription(w http.ResponseWriter, r *http.Req
 
 func (h *SubscriptionHandler) UpdateSubscription(w http.ResponseWriter, r *http.Request) {
 	subscriptionID := mux.Vars(r)["subscriptionid"]
-	var sub entities.Subscription
+	var sub model.Subscription
 	if err := json.NewDecoder(r.Body).Decode(&sub); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return

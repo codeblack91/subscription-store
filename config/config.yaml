@@ -1,0 +1,7 @@
+daData:
+  token: 8a14ac40cd5dbe8001be93c242939c514dba5a07
+  url: http://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/currency
+  currency: RUB
+
+server:
+  port: :8080

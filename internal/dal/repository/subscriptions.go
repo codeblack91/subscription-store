@@ -2,7 +2,7 @@ package repository
 
 import (
 	"errors"
-	"subscription-store/internal/entities"
+	entities "subscription-store/internal/dal/models"
 	"sync"
 )
 
@@ -46,6 +46,7 @@ func (r *InMemorySubscriptionRepository) GetSubscriptions() ([]entities.Subscrip
 
 	var subs []entities.Subscription
 	for _, sub := range r.subscriptions {
+
 		subs = append(subs, sub)
 	}
 
